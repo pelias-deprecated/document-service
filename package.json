@@ -1,0 +1,49 @@
+{
+  "name": "pelias-document-service",
+  "version": "1.0.0",
+  "description": "Web service that synthesizes ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/test | tap-dot",
+    "lint": "jshint .",
+    "travis": "npm run check-dependencies && npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "validate": "npm ls",
+    "check-dependencies": "node_modules/.bin/npm-check --production"
+  },
+  "author": "Mapzen",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pelias/document-service.git"
+  },
+  "keywords": [
+    "pelias"
+  ],
+  "dependencies": {
+    "express": "^4.15.4",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
+    "pelias-model": "^5.0.0",
+    "pelias-wof-admin-lookup": "^3.10.2",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "pelias-mock-logger": "^1.1.1",
+    "proxyquire": "^1.8.0",
+    "superagent": "^3.5.2",
+    "tap-dot": "^1.0.5",
+    "tape": "^4.8.0",
+    "temp": "^0.8.3"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test",
+    "check-dependencies"
+  ]
+}
