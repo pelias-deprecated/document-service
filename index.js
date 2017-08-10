@@ -3,7 +3,7 @@ try {
   const port = ( parseInt(process.env.PORT) || 5000 );
 
   app.listen(port, () => {
-    console.log(`document-generator is now running on port ${port}`);
+    console.log(`document-service is now running on port ${port}`);
   });
 
 } catch (err) {
