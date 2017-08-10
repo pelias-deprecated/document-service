@@ -48,8 +48,8 @@ The following parameters are supported for the service:
 | `lon` | yes | longitude of the record |
 | `lat` | yes | latitude of the record |
 | `name` | yes | a textual name of the record such as the name of a business (for venues) or `house_number` + `street` (for addresses), used by the Pelias API to create result labels
-| `house_number` | <ul><li>yes with `address` layer</li><li>no with `venue` layer</li><li>invalid with `street` layer</li></ul> | house number of an address or venue |
-| `street` | yes with `address` and `street` layers, no with `venue` layer | street of an address or venue |
+| `house_number` | <ul><li>`address` layer, yes</li><li>`venue` layer, no</li><li>`street` layer, invalid</li></ul> | house number of an address or venue |
+| `street` | <ul><li>`address` and `street` layers, yes</li><li>`venue` layer, no<li></ul> | street of an address or venue |
 | `postcode` | no | postcode of an address or venue |
 
 ## Output
