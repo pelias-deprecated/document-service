@@ -31,3 +31,7 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# Examples
+examples/java/.gradle
+examples/java/build
