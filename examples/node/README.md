@@ -1,6 +1,6 @@
 # Pelias Document Service - Node.js Example
 
-This node.js app imports the list of [Boston, Massachusetts public schools](https://bostonopendata-boston.opendata.arcgis.com/datasets/1d9509a8b2fd485d9ad471ba2fdb1f90_0.geojson) into Pelias as venues running on a local Elasticsearch instance using the `pelias` index.  
+This node.js example app imports the list of [Boston, Massachusetts public schools](https://bostonopendata-boston.opendata.arcgis.com/datasets/1d9509a8b2fd485d9ad471ba2fdb1f90_0.geojson) into a [local](http://localhost:9200/pelias) Elasticsearch `pelias` index as venues.  
 
 ## Usage
 
