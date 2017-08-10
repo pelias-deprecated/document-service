@@ -1,0 +1,15 @@
+{
+  "name": "node_pelias_importer",
+  "version": "1.0.0",
+  "description": "Example node.js importer that imports Boston, MA public schools into a local Elasticsearch instance",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Mapzen",
+  "license": "MIT",
+  "dependencies": {
+    "elasticsearch": "^13.3.1",
+    "superagent": "^3.5.2"
+  }
+}
