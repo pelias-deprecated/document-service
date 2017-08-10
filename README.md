@@ -171,12 +171,12 @@ The `/synthesize` endpoint returns an [HTTP status code 400](https://tools.ietf.
 - `lon` value is not parseable as a finite number
 - `id` value is empty
 - `name` value is empty
-- `layer=address`-specific:
+- `address` layer-specific:
   - `house_number` value is empty
   - `street` value is empty
-- `layer=street`-specific:
+- `street` layer-specific:
   - `house_number` value is non-empty
-- `layer=venue`-specific:
+- `venue` layer-specific:
   - `house_number` value is non-empty and `street` value is empty
 
 ### Server Errors
