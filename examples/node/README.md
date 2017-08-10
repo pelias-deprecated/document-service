@@ -8,7 +8,7 @@ To run the example importer, enter the following at the command line:
 
 ```
 npm install
-npm start
+node boston_schools
 ```
 
 Assuming there are no errors, `processed 132 of 132 schools` should be written to the console upon completion.
