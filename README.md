@@ -54,7 +54,7 @@ The following parameters are supported for the service:
 
 ## Output
 
-`GET` requests to the `/synthesize` endpoint return a content-type `application/json` response ready to be sent to Elasticsearch for create/update and queryable by the Pelias API.  The output for OpenAddresses `30 West 26th St` is:
+`GET` requests to the `/synthesize` endpoint return a content-type `application/json` response ready to be sent to Elasticsearch for create/update and queryable by the Pelias API.  The output for OpenAddresses `30 W 26th St` is:
 
 ```
 {
