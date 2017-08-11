@@ -35,3 +35,4 @@ node_modules
 # Examples
 examples/java/.gradle
 examples/java/build
+examples/python3/pelias_importer/
