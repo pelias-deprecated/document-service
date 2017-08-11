@@ -1,6 +1,6 @@
 {
   "name": "pelias-document-service",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Web service that synthesizes ",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,8 @@
     "superagent": "^3.5.2",
     "tap-dot": "^1.0.5",
     "tape": "^4.8.0",
-    "temp": "^0.8.3"
+    "temp": "^0.8.3",
+    "semantic-release": "^6.3.6"
   },
   "pre-commit": [
     "lint",
