@@ -64,7 +64,7 @@ public class BostonSchools {
 
         // setup connection to Elasticsearch
         TransportClient elasticSearchClient = TransportClient.builder().build().addTransportAddress(
-                new InetSocketTransportAddress(InetAddress.getByName("elasticsearch"), 9300));
+                new InetSocketTransportAddress(InetAddress.getByName("elasticsearch"), 9200));
 
         // use the Pelias index with "venue" type
         IndexRequestBuilder reqBuilder = elasticSearchClient.prepareIndex("pelias", "venue");
