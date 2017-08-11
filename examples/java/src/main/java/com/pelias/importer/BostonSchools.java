@@ -45,7 +45,7 @@ public class BostonSchools {
         String schoolsDataUrl = "https://bostonopendata-boston.opendata.arcgis.com/datasets/1d9509a8b2fd485d9ad471ba2fdb1f90_0.geojson";
 
         // the URL for the Pelias document-service
-        String documentServiceUrl = "http://localhost:5000/synthesize/boston_schools/venue?";
+        String documentServiceUrl = "http://document_service:5000/synthesize/boston_schools/venue?";
 
         // setup an http client for getting schools data and synthesizing documents
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -64,7 +64,7 @@ public class BostonSchools {
 
         // setup connection to Elasticsearch
         TransportClient elasticSearchClient = TransportClient.builder().build().addTransportAddress(
-                new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
+                new InetSocketTransportAddress(InetAddress.getByName("elasticsearch"), 9300));
 
         // use the Pelias index with "venue" type
         IndexRequestBuilder reqBuilder = elasticSearchClient.prepareIndex("pelias", "venue");
