@@ -40,7 +40,7 @@
     "tap-dot": "^1.0.5",
     "tape": "^4.8.0",
     "temp": "^0.8.3",
-    "semantic-release": "^6.3.6"
+    "semantic-release": "^7.0.1"
   },
   "pre-commit": [
     "lint",
