@@ -184,3 +184,14 @@ The `/synthesize` endpoint returns an [HTTP status code 400](https://tools.ietf.
 ### Server Errors
 
 The `/synthesize` endpoint returns an [HTTP status code 500](https://tools.ietf.org/html/rfc7231#section-6.6.1) is returned when a error occurs when performing administrative hierarchy lookup.  
+
+## Writing an Importer
+
+As this service currently only looks up the administrative hierarchy and formats the request parameters into JSON ready to be sent to Elasticsearch, an importer only needs to be able to make HTTP GET requests and either an Elasticsearch library or the ability to make HTTP POST requests (to index documents into Elasticsearch in lieu of a library).  
+
+Example importers have been written in a variety of languages:
+
+- [Node.js](https://github.com/pelias/document-service/tree/master/examples/node)
+- [Java](https://github.com/pelias/document-service/tree/master/examples/java)
+- [Python3](https://github.com/pelias/document-service/tree/master/examples/python3)
+- [Z shell](https://github.com/pelias/document-service/tree/master/examples/zsh)
