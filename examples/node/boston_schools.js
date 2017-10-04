@@ -7,7 +7,7 @@ const elasticsearch = require('elasticsearch');
 const schoolsDataUrl = 'https://bostonopendata-boston.opendata.arcgis.com/datasets/1d9509a8b2fd485d9ad471ba2fdb1f90_0.geojson';
 
 // the URL for the Pelias document-service
-const documentServiceUrl = 'http://localhost:5000/synthesize/boston_schools/venue?';
+const documentServiceUrl = 'http://document_service:5000/synthesize/boston_schools/venue?';
 
 // matches "1" and "Main Street" from "1 Main Street"
 const addressPattern = /^(\d+) (.+)$/;
@@ -27,7 +27,7 @@ request
     let total = 0;
 
     const esClient = new elasticsearch.Client({
-      host: 'localhost:9200'
+      host: 'elasticsearch:9200'
     });
 
     const schools = response.body.features;

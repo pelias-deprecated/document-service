@@ -10,7 +10,7 @@ import sys
 schoolsDataUrl = 'https://bostonopendata-boston.opendata.arcgis.com/datasets/1d9509a8b2fd485d9ad471ba2fdb1f90_0.geojson'
 
 # the URL for the Pelias document-service
-documentServiceUrl = 'http://localhost:5000/synthesize/boston_schools/venue?'
+documentServiceUrl = 'http://document_service:5000/synthesize/boston_schools/venue?'
 
 # matches "1" and "Main Street" from "1 Main Street"
 addressPattern = re.compile('^(\\d+) (.+)$')
@@ -27,7 +27,7 @@ with urllib.request.urlopen(schoolsDataUrl) as schoolsResponse:
     schoolsData = json.loads(schoolsResponse.read().decode('utf-8'))
 
     # setup connection to Elasticsearch
-    es = Elasticsearch( [ { 'host': 'localhost', 'port': 9200 } ] )
+    es = Elasticsearch( [ { 'host': 'elasticsearch', 'port': 9200 } ] )
 
     # iterate over the individual schools, performing document-service and inserting into ES
     for school in schoolsData['features']:
