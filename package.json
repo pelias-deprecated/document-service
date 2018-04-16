@@ -35,7 +35,7 @@
   "devDependencies": {
     "npm-check": "git://github.com/orangejulius/npm-check.git#disable-update-check",
     "pelias-mock-logger": "1.2.0",
-    "proxyquire": "^1.8.0",
+    "proxyquire": "^2.0.0",
     "superagent": "^3.5.2",
     "tap-dot": "^1.0.5",
     "tape": "^4.8.0",
