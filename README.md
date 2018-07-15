@@ -14,6 +14,8 @@
 
 Module that provides a web service to aid language-agnostic importers with creating documents for insertion into an Elasticsearch index queryable by the Pelias API.  [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) is required in order to populate the documents' administrative hierarchy.
 
+**Note:** This project is not yet suppported as a production-ready component of Pelias
+
 ## Installation
 
 ```bash
