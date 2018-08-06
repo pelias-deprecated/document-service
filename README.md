@@ -1,4 +1,7 @@
-> This repository is part of the [Pelias](https://github.com/pelias/pelias) project. Pelias is an open-source, open-data geocoder built by [Mapzen](https://www.mapzen.com/) that also powers [Mapzen Search](https://mapzen.com/projects/search). Our official user documentation is [here](https://mapzen.com/documentation/search/).
+>This repository is part of the [Pelias](https://github.com/pelias/pelias)
+>project. Pelias is an open-source, open-data geocoder originally sponsored by
+>[Mapzen](https://www.mapzen.com/). Our official user documentation is
+>[here](https://github.com/pelias/documentation).
 
 # Pelias Document Service
 
@@ -9,7 +12,9 @@
 
 ## Overview
 
-Module that provides a web service to aid language-agnostic importers with creating documents for insertion into an Elasticsearch index queryable by the Pelias API.  [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) is required in order to populate the documents' administrative hierarchy.  
+Module that provides a web service to aid language-agnostic importers with creating documents for insertion into an Elasticsearch index queryable by the Pelias API.  [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) is required in order to populate the documents' administrative hierarchy.
+
+**Note:** This project is not yet suppported as a production-ready component of Pelias
 
 ## Installation
 
@@ -20,7 +25,7 @@ $ npm install
 $ npm start /path/to/whosonfirst/data
 ```
 
-For ease of use, [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) can be downloaded using scripts provided by the Pelias [Who's on First module](https://www.npmjs.com/package/pelias-whosonfirst#downloading-the-data).  
+For ease of use, [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) can be downloaded using scripts provided by the Pelias [Who's on First module](https://www.npmjs.com/package/pelias-whosonfirst#downloading-the-data).
 
 [![NPM](https://nodei.co/npm/pelias-document-service.png?downloads=true&stars=true)](https://nodei.co/npm/pelias-document-service)
 
@@ -32,13 +37,13 @@ The `pelias-document-service` npm module can be found here:
 
 ## Usage
 
-To start the document service, type: `npm start <path to Who's on First data>`.  By default, the service runs on port 5000 but can be overridden in the `PORT` environmental variable.  
+To start the document service, type: `npm start <path to Who's on First data>`.  By default, the service runs on port 5000 but can be overridden in the `PORT` environmental variable.
 
 `GET` requests are made to the `/synthesize` endpoint in the format:  `http://localhost:5000/synthesize/<source>/<layer>`.
 
-`source` is the name of the source of the data that can be used to filter and is used in the synthesized document.  For example, data imported from [OpenAddresses](https://openaddresses.io/) would use `openaddresses` for `source`.   
+`source` is the name of the source of the data that can be used to filter and is used in the synthesized document.  For example, data imported from [OpenAddresses](https://openaddresses.io/) would use `openaddresses` for `source`.
 
-`layer` is the type of data that this document represents.  Currently, the only valid values for `layer` are `address`, `street`, and `venue`.  
+`layer` is the type of data that this document represents.  Currently, the only valid values for `layer` are `address`, `street`, and `venue`.
 
 ## Parameters
 
@@ -147,19 +152,19 @@ There are 3 types of documents that can be synthesized, each corresponding to th
 
 ### Venues
 
-Venue documents are synthesized by calling the `/synthesize/<source>/venue` endpoint.  Each venue has a `lat`, `lon`, `id`, `name`, and optional `house_number`, `street`, and `postcode`.  `name` is typically the name of the business or point-of-interest, such as "New York Bakery" or "Yellowstone National Park".  `house_number` and `street` are optional since in some cases this information is either not applicable (as in the case of national parks or water features which are defined as polygons) or confidential (such as women's shelters or other cases where point accuracy is to be purposely obscured).  
+Venue documents are synthesized by calling the `/synthesize/<source>/venue` endpoint.  Each venue has a `lat`, `lon`, `id`, `name`, and optional `house_number`, `street`, and `postcode`.  `name` is typically the name of the business or point-of-interest, such as "New York Bakery" or "Yellowstone National Park".  `house_number` and `street` are optional since in some cases this information is either not applicable (as in the case of national parks or water features which are defined as polygons) or confidential (such as women's shelters or other cases where point accuracy is to be purposely obscured).
 
 Example (data from [OpenStreetMap](https://www.openstreetmap.org/)): `http://localhost:5000/synthesize/openstreetmap/venue?id=264768896&lon=-73.989642&lat40.74101&name=Flatiron+Building&house_number=175&street=5th+Avenue&postcode=10010`
 
 ### Addresses
 
-Address documents can be synthesized by calling the `/synthesize/<source>/address` endpoint.  Each address has a `lat`, `lon`, `id`, `name`, `house_number`, `street`, and optional `postcode`.  The `name` value is typically just the formatted address, which can be number-prefixed, as in "30 West 26th Street, New York, NY", or -postfixed, as in "Rigaer Straße 11, Berlin, Germany", but can be anything.  The document service makes no judgements on what the value of name should be; its value is determined by the caller.  
+Address documents can be synthesized by calling the `/synthesize/<source>/address` endpoint.  Each address has a `lat`, `lon`, `id`, `name`, `house_number`, `street`, and optional `postcode`.  The `name` value is typically just the formatted address, which can be number-prefixed, as in "30 West 26th Street, New York, NY", or -postfixed, as in "Rigaer Straße 11, Berlin, Germany", but can be anything.  The document service makes no judgements on what the value of name should be; its value is determined by the caller.
 
 Example (data from [OpenAddresses](https://openaddresses.io/)): `http://localhost:5000/synthesize/openaddresses/address?id=6364a510f0268d6f&lon=-73.9904095&lat=40.74427&name=30+W+26th+St&house_number=30&street=W+26th+St&postcode=10010`
 
 ### Streets
 
-Street documents are synthesized using the `/synthesize/<source>/street` endpoint.  Each street has a `lat`, `lon`, `id`, `name`, `street`, and optional `postcode`.  If a street is entirely contained within a single postcode, it should be supplied if available.  Typically, the `name` value should be the same as the `street` value but there are no restrictions placed upon this condition.  
+Street documents are synthesized using the `/synthesize/<source>/street` endpoint.  Each street has a `lat`, `lon`, `id`, `name`, `street`, and optional `postcode`.  If a street is entirely contained within a single postcode, it should be supplied if available.  Typically, the `name` value should be the same as the `street` value but there are no restrictions placed upon this condition.
 
 Example (data from [OpenStreetMap](https://www.openstreetmap.org/)): `http://localhost:5000/synthesize/openaddresses/address?id=10540891&lon=-73.935546&lat=40.813082&name=Madison+Avenue&street=Madison+Avenue`
 
@@ -183,11 +188,11 @@ The `/synthesize` endpoint returns an [HTTP status code 400](https://tools.ietf.
 
 ### Server Errors
 
-The `/synthesize` endpoint returns an [HTTP status code 500](https://tools.ietf.org/html/rfc7231#section-6.6.1) is returned when a error occurs when performing administrative hierarchy lookup.  
+The `/synthesize` endpoint returns an [HTTP status code 500](https://tools.ietf.org/html/rfc7231#section-6.6.1) is returned when a error occurs when performing administrative hierarchy lookup.
 
 ## Writing an Importer
 
-As this service currently only looks up the administrative hierarchy and formats the request parameters into JSON ready to be sent to Elasticsearch, an importer only needs to be able to make HTTP GET requests and either an Elasticsearch library or the ability to make HTTP POST requests (to index documents into Elasticsearch in lieu of a library).  
+As this service currently only looks up the administrative hierarchy and formats the request parameters into JSON ready to be sent to Elasticsearch, an importer only needs to be able to make HTTP GET requests and either an Elasticsearch library or the ability to make HTTP POST requests (to index documents into Elasticsearch in lieu of a library).
 
 Example importers have been written in a variety of languages:
 
