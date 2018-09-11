@@ -36,8 +36,7 @@
     "superagent": "^3.5.2",
     "tap-dot": "^2.0.0",
     "tape": "^4.8.0",
-    "temp": "^0.8.3",
-    "semantic-release": "^15.0.0"
+    "temp": "^0.8.3"
   },
   "pre-commit": [
     "lint",
