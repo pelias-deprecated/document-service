@@ -20,5 +20,8 @@ RUN npm install
 # run tests
 RUN npm test
 
+# use pelias user
+USER pelias
+
 # start the document-service using the directory the data was downloaded to
 CMD ["npm", "start", "--", "/data/whosonfirst"]
