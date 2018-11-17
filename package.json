@@ -33,7 +33,7 @@
   "devDependencies": {
     "pelias-mock-logger": "^1.2.0",
     "proxyquire": "^2.0.0",
-    "superagent": "^3.5.2",
+    "superagent": "^4.0.0",
     "tap-dot": "^2.0.0",
     "tape": "^4.8.0",
     "temp": "^0.8.3"
