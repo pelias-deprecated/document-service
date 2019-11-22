@@ -5,6 +5,8 @@
 
 # Pelias Document Service
 
+** This service is deprecated and will no longer be maintained **
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/pelias/document-service.svg)](https://greenkeeper.io/)
 
 ![Travis CI Status](https://travis-ci.org/pelias/document-service.svg)
@@ -13,8 +15,6 @@
 ## Overview
 
 Module that provides a web service to aid language-agnostic importers with creating documents for insertion into an Elasticsearch index queryable by the Pelias API.  [Who's on First data](https://github.com/whosonfirst-data/whosonfirst-data) is required in order to populate the documents' administrative hierarchy.
-
-**Note:** This project is not yet suppported as a production-ready component of Pelias
 
 ## Installation
 
